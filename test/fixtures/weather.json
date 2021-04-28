@@ -1,0 +1,165 @@
+{
+    "consolidated_weather": [
+        {
+            "id": 6576760696078336,
+            "weather_state_name": "Heavy Cloud",
+            "weather_state_abbr": "hc",
+            "wind_direction_compass": "ENE",
+            "created": "2021-03-26T13:40:34.903300Z",
+            "applicable_date": "2021-03-26",
+            "min_temp": 25.305,
+            "max_temp": 32.834999999999994,
+            "the_temp": 32.745000000000005,
+            "wind_speed": 6.238212642699966,
+            "wind_direction": 69.85245462716372,
+            "air_pressure": 1010.5,
+            "humidity": 60,
+            "visibility": 9.968968722659667,
+            "predictability": 71
+        },
+        {
+            "id": 6605614705803264,
+            "weather_state_name": "Heavy Cloud",
+            "weather_state_abbr": "hc",
+            "wind_direction_compass": "ESE",
+            "created": "2021-03-26T13:40:37.514457Z",
+            "applicable_date": "2021-03-27",
+            "min_temp": 25.6,
+            "max_temp": 33.769999999999996,
+            "the_temp": 32.975,
+            "wind_speed": 4.965513787123201,
+            "wind_direction": 116.70175030091819,
+            "air_pressure": 1009.5,
+            "humidity": 59,
+            "visibility": 12.432394814284578,
+            "predictability": 71
+        },
+        {
+            "id": 4925609911255040,
+            "weather_state_name": "Heavy Cloud",
+            "weather_state_abbr": "hc",
+            "wind_direction_compass": "SE",
+            "created": "2021-03-26T13:40:40.624392Z",
+            "applicable_date": "2021-03-28",
+            "min_temp": 25.0,
+            "max_temp": 33.864999999999995,
+            "the_temp": 32.5,
+            "wind_speed": 4.3952313043134765,
+            "wind_direction": 137.6480110663085,
+            "air_pressure": 1009.0,
+            "humidity": 59,
+            "visibility": 12.349752445717012,
+            "predictability": 71
+        },
+        {
+            "id": 5893259063721984,
+            "weather_state_name": "Heavy Cloud",
+            "weather_state_abbr": "hc",
+            "wind_direction_compass": "SE",
+            "created": "2021-03-26T13:40:43.570390Z",
+            "applicable_date": "2021-03-29",
+            "min_temp": 25.405,
+            "max_temp": 34.18,
+            "the_temp": 32.545,
+            "wind_speed": 4.43433680163313,
+            "wind_direction": 141.9754148651722,
+            "air_pressure": 1008.0,
+            "humidity": 58,
+            "visibility": 9.338587648134892,
+            "predictability": 71
+        },
+        {
+            "id": 4787099363442688,
+            "weather_state_name": "Heavy Cloud",
+            "weather_state_abbr": "hc",
+            "wind_direction_compass": "SE",
+            "created": "2021-03-26T13:40:47.560774Z",
+            "applicable_date": "2021-03-30",
+            "min_temp": 25.415,
+            "max_temp": 34.385000000000005,
+            "the_temp": 32.675,
+            "wind_speed": 4.608494792391102,
+            "wind_direction": 142.98963605616925,
+            "air_pressure": 1007.5,
+            "humidity": 56,
+            "visibility": 12.010794460351548,
+            "predictability": 71
+        },
+        {
+            "id": 6013819970125824,
+            "weather_state_name": "Heavy Cloud",
+            "weather_state_abbr": "hc",
+            "wind_direction_compass": "SSE",
+            "created": "2021-03-26T13:40:49.512857Z",
+            "applicable_date": "2021-03-31",
+            "min_temp": 25.08,
+            "max_temp": 33.47,
+            "the_temp": 30.86,
+            "wind_speed": 3.5812723693629205,
+            "wind_direction": 146.5,
+            "air_pressure": 1007.0,
+            "humidity": 59,
+            "visibility": 9.999726596675416,
+            "predictability": 71
+        }
+    ],
+    "time": "2021-03-26T22:08:57.729239+08:00",
+    "sun_rise": "2021-03-26T05:55:20.041502+08:00",
+    "sun_set": "2021-03-26T18:07:31.709713+08:00",
+    "timezone_name": "LMT",
+    "parent": {
+        "title": "Philippines",
+        "location_type": "Country",
+        "woeid": 23424934,
+        "latt_long": "15.593050,120.739067"
+    },
+    "sources": [
+        {
+            "title": "BBC",
+            "slug": "bbc",
+            "url": "http://www.bbc.co.uk/weather/",
+            "crawl_rate": 360
+        },
+        {
+            "title": "Forecast.io",
+            "slug": "forecast-io",
+            "url": "http://forecast.io/",
+            "crawl_rate": 480
+        },
+        {
+            "title": "HAMweather",
+            "slug": "hamweather",
+            "url": "http://www.hamweather.com/",
+            "crawl_rate": 360
+        },
+        {
+            "title": "Met Office",
+            "slug": "met-office",
+            "url": "http://www.metoffice.gov.uk/",
+            "crawl_rate": 180
+        },
+        {
+            "title": "OpenWeatherMap",
+            "slug": "openweathermap",
+            "url": "http://openweathermap.org/",
+            "crawl_rate": 360
+        },
+        {
+            "title": "Weather Underground",
+            "slug": "wunderground",
+            "url": "https://www.wunderground.com/?apiref=fc30dc3cd224e19b",
+            "crawl_rate": 720
+        },
+        {
+            "title": "World Weather Online",
+            "slug": "world-weather-online",
+            "url": "http://www.worldweatheronline.com/",
+            "crawl_rate": 360
+        }
+    ],
+    "title": "Manila",
+    "location_type": "City",
+    "woeid": 1199477,
+    "latt_long": "14.609620,121.005890",
+    "timezone": "Asia/Manila"
+}
