@@ -14,6 +14,7 @@ void main() {
   );
 
   test('fromJson', () async {
+    ///the test shows the correct data of lattlong
     // arrange
     final Map<String, dynamic> jsonMap = json.decode(fixture('location.json'));
     // act

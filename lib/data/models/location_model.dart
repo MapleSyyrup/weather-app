@@ -1,10 +1,11 @@
 import 'package:equatable/equatable.dart';
 
+/// data model for location
 class LocationModel extends Equatable {
-  final String title;
-  final String locationType;
-  final int woeid;
-  final String lattLong;
+  final String title; // city name
+  final String locationType; //locationType is always City
+  final int woeid; //where on earth ID
+  final String lattLong; // geographic coordinates in map
 
   LocationModel({
     this.title,
@@ -21,6 +22,8 @@ class LocationModel extends Equatable {
         lattLong,
       ];
 
+/// factory constructor for creating a new User instance from a map. 
+/// returns the locationModel from json
   factory LocationModel.fromJson(Map<String, dynamic> json) {
     return LocationModel(
       title: json['title'],
