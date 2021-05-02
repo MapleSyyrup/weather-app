@@ -1,8 +1,6 @@
-[
-    {
-        "title": "Manila",
-        "location_type": "City",
-        "woeid": 1199477,
-        "latt_long": "14.609620,121.005890"
-    }
-]
+{
+    "title": "Manila",
+    "location_type": "City",
+    "woeid": 1199477,
+    "latt_long": "14.609620,121.005890"
+}

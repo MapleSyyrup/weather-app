@@ -14,10 +14,6 @@ enum WeatherCondition {
   unknown
 }
 
-// class LocationModel extends Equatable {
-    
-// }
-
 class WeatherModel extends Equatable {
   final WeatherCondition condition;
   final String city;
