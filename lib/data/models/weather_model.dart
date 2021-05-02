@@ -14,10 +14,6 @@ enum WeatherCondition {
   unknown
 }
 
-// class LocationModel extends Equatable {
-    
-// }
-
 class WeatherModel extends Equatable {
   final WeatherCondition condition;
   final String city;
@@ -34,6 +30,8 @@ class WeatherModel extends Equatable {
         temperature,
       ];
 
+/// factory constructor for creating a new User instance from a map. 
+/// returns the WeatherModel from json
   factory WeatherModel.fromJson(Map<String, dynamic> json) {
     final consolidatedWeather = json['consolidated_weather'][0];
     return WeatherModel(
