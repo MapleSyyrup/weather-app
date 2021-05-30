@@ -19,8 +19,15 @@ class WeatherModel extends Equatable {
   final String city;
   final int locationId;
   final double temperature;
+  final DateTime dateUpdated;
 
-  WeatherModel({this.condition, this.city, this.locationId, this.temperature});
+  WeatherModel({
+    this.condition,
+    this.city,
+    this.locationId,
+    this.temperature,
+    this.dateUpdated,
+  });
 
   @override
   List<Object> get props => [
@@ -28,10 +35,11 @@ class WeatherModel extends Equatable {
         city,
         locationId,
         temperature,
+        dateUpdated,
       ];
 
-/// factory constructor for creating a new User instance from a map. 
-/// returns the WeatherModel from json
+  /// factory constructor for creating a new User instance from a map.
+  /// returns the WeatherModel from json
   factory WeatherModel.fromJson(Map<String, dynamic> json) {
     final consolidatedWeather = json['consolidated_weather'][0];
     return WeatherModel(
@@ -39,6 +47,7 @@ class WeatherModel extends Equatable {
       city: json['title'],
       locationId: json['woeid'],
       temperature: consolidatedWeather['the_temp'] as double,
+      dateUpdated: DateTime.now(),
     );
   }
 

@@ -7,7 +7,7 @@ import '../../fixtures/fixture_reader.dart';
 
 void main() {
   final locationModel = LocationModel(
-    title: 'Manila',
+    city: 'Manila',
     locationType: 'City',
     woeid: 1199477,
     lattLong: '14.609620,121.005890',
