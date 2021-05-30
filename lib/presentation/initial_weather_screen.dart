@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/presentation/bloc/weather_bloc.dart';
-// import 'package:weather_app/presentation/bloc/weather_event.dart';
-// import 'package:weather_app/presentation/bloc/weather_event.dart';
-// import 'package:weather_app/presentation/bloc/weather_event.dart';
+import 'package:weather_app/presentation/bloc/weather_event.dart';
 import 'package:weather_app/presentation/bloc/weather_state.dart';
-import 'package:weather_app/presentation/weather_screen.dart';
-// import 'package:weather_app/presentation/weather_screen.dart';
 
 class InitialWeather extends StatefulWidget {
   static const routeName = '/initial';
@@ -21,10 +17,9 @@ class _InitialWeatherState extends State<InitialWeather> {
 
   @override
   Widget build(BuildContext context) {
-    // return BlocBuilder<WeatherBloc, WeatherState>(
-    //   builder: (context, state) {
-    return BlocBuilder<WeatherBloc, WeatherState>(
-      builder: (context, state) => Scaffold(
+    return BlocListener<WeatherBloc, WeatherState>(
+      listener: (context, state) {},
+      child: Scaffold(
         body: Stack(
           children: [
             Container(
@@ -57,18 +52,19 @@ class _InitialWeatherState extends State<InitialWeather> {
                       suffixIcon: IconButton(
                         icon: Icon(Icons.search),
                         onPressed: () {
-                          // BlocProvider.of<WeatherBloc>(context).add(CityWeather(city: _enterCity.text));
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => WeatherScreen(city: _enterCity.text),
-                            ),
-                          );
+                          context
+                              .read<WeatherBloc>()
+                              .add(CityWeather(city: _enterCity.text));
                         },
-                        color: _focusChange ? Color.fromRGBO(63, 193, 192, 1) : Colors.white,
+                        color: _focusChange
+                            ? Color.fromRGBO(63, 193, 192, 1)
+                            : Colors.white,
                       ),
                       labelText: 'Enter City',
-                      labelStyle: TextStyle(color: _focusChange ? Color.fromRGBO(63, 193, 192, 1) : Colors.white),
+                      labelStyle: TextStyle(
+                          color: _focusChange
+                              ? Color.fromRGBO(63, 193, 192, 1)
+                              : Colors.white),
                       filled: true,
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
@@ -96,7 +92,5 @@ class _InitialWeatherState extends State<InitialWeather> {
         ),
       ),
     );
-    // },
-    // );
   }
 }
