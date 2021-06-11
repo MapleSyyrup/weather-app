@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app/presentation/bloc/weather_bloc.dart';
 import 'package:weather_app/presentation/bloc/weather_state.dart';
 import 'package:weather_app/presentation/initial_weather_screen.dart';
-import 'package:weather_app/presentation/widgets/location_widget.dart';
+import 'package:weather_app/presentation/weather_info.dart';
 
 class WeatherScreen extends StatefulWidget {
   static const routeName = '/WeatherScreen';
@@ -22,7 +22,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
         if (state is WeatherLoadingState) {
           return Center(child: CircularProgressIndicator());
         } else if (state is WeatherLoadingSuccessState) {
-          return WeatherInfo(city: state.weatherModel.city);
+          return WeatherInfo(city: state.weatherModel.city, weatherModel: state.weatherModel,);
         } else if (state is WeatherLoadingFailureState) {
           return Center(
             child: Text('${state.errorMessage}'),
@@ -35,26 +35,4 @@ class _WeatherScreenState extends State<WeatherScreen> {
   }
 }
 
-class WeatherInfo extends StatelessWidget {
-  const WeatherInfo({
-    Key key,
-    @required this.city,
-  }) : super(key: key);
 
-  final String city;
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView(children: [
-      Padding(
-        padding: EdgeInsets.only(top: 100.0),
-        child: Center(
-          child: Location(city: city),
-        ),
-      ),
-      // Center(child: LastUpdated(dateTime: ),),
-      // Padding(padding: EdgeInsets.symmetric(vertical: 50.0),
-      // child: Center(child: CombinedWeatherTemperature()),),
-    ]);
-  }
-}

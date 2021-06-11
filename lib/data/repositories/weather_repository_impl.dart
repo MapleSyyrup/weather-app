@@ -10,8 +10,7 @@ class WeatherRepositoryImpl {
 
   WeatherRepositoryImpl({@required this.httpClient})
       : assert(httpClient != null);
-
-  // TODO: This contains Http Error, might need API key from your registered account here. Please read docs on metaweather for proper implementation of API call.
+ 
   Future<int> getLocation(String city) async {
     final locationUrl = Uri.parse('$baseUrl/api/location/search/?query=$city');
     final locationResponse = await http.get(locationUrl);

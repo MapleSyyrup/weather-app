@@ -19,14 +19,20 @@ class WeatherModel extends Equatable {
   final String city;
   final int locationId;
   final double temperature;
+  final double minTemp;
+  final double maxTemp;
   final DateTime dateUpdated;
+  final String weatherType;
 
   WeatherModel({
+    this.minTemp,
+    this.maxTemp,
     this.condition,
     this.city,
     this.locationId,
     this.temperature,
     this.dateUpdated,
+    this.weatherType,
   });
 
   @override
@@ -35,7 +41,10 @@ class WeatherModel extends Equatable {
         city,
         locationId,
         temperature,
+        minTemp,
+        maxTemp,
         dateUpdated,
+        weatherType,
       ];
 
   /// factory constructor for creating a new User instance from a map.
@@ -47,6 +56,9 @@ class WeatherModel extends Equatable {
       city: json['title'],
       locationId: json['woeid'],
       temperature: consolidatedWeather['the_temp'] as double,
+      minTemp: consolidatedWeather['min_temp'] as double,
+      maxTemp: consolidatedWeather['max_temp'] as double,
+      weatherType: consolidatedWeather['weather_state_name'],
       dateUpdated: DateTime.now(),
     );
   }
