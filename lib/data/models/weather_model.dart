@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+///types of weather conditions
 enum WeatherCondition {
   snow,
   sleet,
@@ -15,12 +16,40 @@ enum WeatherCondition {
 }
 
 class WeatherModel extends Equatable {
+  ///types of weather condition
   final WeatherCondition condition;
+
+  ///city entered by the user
   final String city;
+
+  ///where on earth id of the city
   final int locationId;
+
+  ///weather temperature
   final double temperature;
 
-  WeatherModel({this.condition, this.city, this.locationId, this.temperature});
+  ///minimum weather temperature
+  final double minTemp;
+
+  ///maximum weather temperature
+  final double maxTemp;
+
+  ///date when the weather is updated
+  final DateTime dateUpdated;
+
+  ///full type of weather condition
+  final String weatherType;
+
+  WeatherModel({
+    this.minTemp,
+    this.maxTemp,
+    this.condition,
+    this.city,
+    this.locationId,
+    this.temperature,
+    this.dateUpdated,
+    this.weatherType,
+  });
 
   @override
   List<Object> get props => [
@@ -28,10 +57,14 @@ class WeatherModel extends Equatable {
         city,
         locationId,
         temperature,
+        minTemp,
+        maxTemp,
+        dateUpdated,
+        weatherType,
       ];
 
-/// factory constructor for creating a new User instance from a map. 
-/// returns the WeatherModel from json
+  /// factory constructor for creating a new User instance from a map.
+  /// returns the WeatherModel from json
   factory WeatherModel.fromJson(Map<String, dynamic> json) {
     final consolidatedWeather = json['consolidated_weather'][0];
     return WeatherModel(
@@ -39,6 +72,10 @@ class WeatherModel extends Equatable {
       city: json['title'],
       locationId: json['woeid'],
       temperature: consolidatedWeather['the_temp'] as double,
+      minTemp: consolidatedWeather['min_temp'] as double,
+      maxTemp: consolidatedWeather['max_temp'] as double,
+      weatherType: consolidatedWeather['weather_state_name'],
+      dateUpdated: DateTime.now(),
     );
   }
 

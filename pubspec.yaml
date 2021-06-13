@@ -23,9 +23,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  bloc: ^7.0.0
+  bloc_test: ^8.0.0
   cupertino_icons: ^1.0.2
   equatable: ^2.0.0
+  flutter_bloc: ^7.0.1
   http: ^0.13.1
+  mockito: ^5.0.7
 
 dev_dependencies:
   flutter_test:
@@ -42,7 +46,17 @@ flutter:
   uses-material-design: true
   # To add assets to your application, add an assets section, like this:
   assets:
-   - assets/weather_today.png
+    - assets/weather_today.png
+    - assets/clear.png
+    - assets/hail.png
+    - assets/heavyCloud.png
+    - assets/heavyRain.png
+    - assets/lightCloud.png
+    - assets/lightRain.png
+    - assets/showers.png
+    - assets/sleet.png
+    - assets/snow.png
+    - assets/thunderstorm.png
   #   - images/a_dot_ham.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
