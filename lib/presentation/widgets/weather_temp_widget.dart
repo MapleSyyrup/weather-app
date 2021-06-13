@@ -3,6 +3,7 @@ import 'package:weather_app/data/models/weather_model.dart' as model;
 import 'package:weather_app/presentation/widgets/temperature_widget.dart';
 import 'package:weather_app/presentation/widgets/weather_condition_widget.dart';
 
+///UI design for weather temperature
 class WeatherTemperature extends StatelessWidget {
   final model.WeatherModel weatherModel;
   const WeatherTemperature({Key key, @required this.weatherModel})

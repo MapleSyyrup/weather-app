@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:weather_app/data/models/constants.dart';
 import 'package:weather_app/data/models/weather_model.dart';
 
+///types of weather condition
 class WeatherConditions extends StatelessWidget {
+  ///holds the weather condition
   final WeatherCondition condition;
 
   const WeatherConditions({

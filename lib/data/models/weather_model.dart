@@ -1,5 +1,6 @@
 import 'package:equatable/equatable.dart';
 
+///types of weather conditions
 enum WeatherCondition {
   snow,
   sleet,
@@ -15,13 +16,28 @@ enum WeatherCondition {
 }
 
 class WeatherModel extends Equatable {
+  ///types of weather condition
   final WeatherCondition condition;
+
+  ///city entered by the user
   final String city;
+
+  ///where on earth id of the city
   final int locationId;
+
+  ///weather temperature
   final double temperature;
+
+  ///minimum weather temperature
   final double minTemp;
+
+  ///maximum weather temperature
   final double maxTemp;
+
+  ///date when the weather is updated
   final DateTime dateUpdated;
+
+  ///full type of weather condition
   final String weatherType;
 
   WeatherModel({

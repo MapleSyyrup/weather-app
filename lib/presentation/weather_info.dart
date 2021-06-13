@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/data/models/constants.dart';
 import 'package:weather_app/presentation/bloc/weather_bloc.dart';
 import 'package:weather_app/presentation/bloc/weather_event.dart';
 import 'package:weather_app/presentation/bloc/weather_state.dart';
@@ -8,6 +9,7 @@ import '../data/models/weather_model.dart';
 import 'package:weather_app/presentation/widgets/lastupdate_widget.dart';
 import 'package:weather_app/presentation/widgets/location_widget.dart';
 
+///WeatherInfo displays the weather information of a city
 class WeatherInfo extends StatefulWidget {
   const WeatherInfo({
     Key key,
@@ -15,7 +17,10 @@ class WeatherInfo extends StatefulWidget {
     @required this.weatherModel,
   }) : super(key: key);
 
+  ///the entered city of the user
   final String city;
+
+  ///weatherModel is used for the fetched data
   final WeatherModel weatherModel;
 
   @override
@@ -37,8 +42,8 @@ class _WeatherInfoState extends State<WeatherInfo> {
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
               colors: [
-                Color.fromRGBO(45, 181, 223, 1), //blue
-                Color.fromRGBO(32, 129, 159, 1), //ocean blue
+                ConstantColors.blue, //blue
+                ConstantColors.oceanBlue, //ocean blue
               ],
             ),
           ),
@@ -70,46 +75,46 @@ class _WeatherInfoState extends State<WeatherInfo> {
               isScrollControlled: true,
               context: context,
               builder: (BuildContext context) {
+                var borderRadius = BorderRadius.circular(30);
                 return Focus(
                   child: Padding(
                     padding: EdgeInsets.all(20),
                     child: TextField(
-                      // cursorColor: Color.fromRGBO(63, 193, 192, 1),
+                      // cursorColor: Color.fromRGBO(63, 193, 192, 1), will be used for UI design
                       controller: _enterCityAgain,
-                      // style: TextStyle(color: Colors.white),
+                      // style: TextStyle(color: Colors.white), will be used for UI design
                       decoration: InputDecoration(
                         suffixIcon: IconButton(
                           icon: Icon(Icons.search),
                           onPressed: () {
                             context.read<WeatherBloc>().add(CityWeather(city: _enterCityAgain.text));
                           },
-                          // color: _focusChange ? Color.fromRGBO(63, 193, 192, 1) : Colors.white,
+                          // color: _focusChange ? Color.fromRGBO(63, 193, 192, 1) : Colors.white, will be used for UI design
                         ),
                         labelText: 'Enter City',
-                        // labelStyle: TextStyle(color: _focusChange ? Color.fromRGBO(63, 193, 192, 1) : Colors.white),
+                        // labelStyle: TextStyle(color: _focusChange ? Color.fromRGBO(63, 193, 192, 1) : Colors.white), will be used for UI design
                         filled: true,
                         enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius: borderRadius,
                           borderSide: BorderSide(
                             color: Colors.black,
                           ),
                         ),
                         focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(30),
+                          borderRadius: borderRadius,
                           borderSide: BorderSide(
-                              // color: Color.fromRGBO(63, 193, 192, 1),
+                              // color: Color.fromRGBO(63, 193, 192, 1), will be used for UI design
                               color: Colors.blue),
                         ),
                       ),
                     ),
                   ),
                   onFocusChange: (hasFocus) {
+                    ///if focus is not mounted or does not exist in the widget tree anymore, it will be returned and will not set the state
                     if (!mounted) {
                       return;
                     }
-                    setState(() {
-                      _focusChange = hasFocus;
-                    });
+                    setState(() => _focusChange = hasFocus);
                   },
                 );
               },

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:weather_app/data/models/constants.dart';
 import 'package:weather_app/presentation/bloc/weather_bloc.dart';
 import 'package:weather_app/presentation/bloc/weather_event.dart';
 import 'package:weather_app/presentation/bloc/weather_state.dart';
 
+///InitialWeather screen is the first screen of the app when it starts
 class InitialWeather extends StatefulWidget {
   static const routeName = '/initial';
 
@@ -28,8 +30,8 @@ class _InitialWeatherState extends State<InitialWeather> {
                   begin: Alignment.topRight,
                   end: Alignment.bottomLeft,
                   colors: [
-                    Color.fromRGBO(63, 193, 192, 1), //blue green
-                    Color.fromRGBO(29, 78, 137, 1), //yale blue
+                    ConstantColors.blueGreen, //blue green
+                    ConstantColors.yaleBlue, //yale blue
                   ],
                 ),
               ),
@@ -39,32 +41,25 @@ class _InitialWeatherState extends State<InitialWeather> {
               children: [
                 SizedBox(height: 100.0),
                 Image.asset(
-                  'assets/weather_today.png',
+                  Constants.weatherToday,
                   fit: BoxFit.cover,
                 ),
                 SizedBox(height: 10.0),
                 Focus(
                   child: TextField(
-                    cursorColor: Color.fromRGBO(63, 193, 192, 1),
+                    cursorColor: ConstantColors.blueGreen,
                     controller: _enterCity,
                     style: TextStyle(color: Colors.white),
                     decoration: InputDecoration(
                       suffixIcon: IconButton(
                         icon: Icon(Icons.search),
                         onPressed: () {
-                          context
-                              .read<WeatherBloc>()
-                              .add(CityWeather(city: _enterCity.text));
+                          context.read<WeatherBloc>().add(CityWeather(city: _enterCity.text));
                         },
-                        color: _focusChange
-                            ? Color.fromRGBO(63, 193, 192, 1)
-                            : Colors.white,
+                        color: _focusChange ? ConstantColors.blueGreen : Colors.white,
                       ),
                       labelText: 'Enter City',
-                      labelStyle: TextStyle(
-                          color: _focusChange
-                              ? Color.fromRGBO(63, 193, 192, 1)
-                              : Colors.white),
+                      labelStyle: TextStyle(color: _focusChange ? ConstantColors.blueGreen : Colors.white),
                       filled: true,
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
@@ -75,15 +70,13 @@ class _InitialWeatherState extends State<InitialWeather> {
                       focusedBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(30),
                         borderSide: BorderSide(
-                          color: Color.fromRGBO(63, 193, 192, 1),
+                          color: ConstantColors.blueGreen,
                         ),
                       ),
                     ),
                   ),
                   onFocusChange: (hasFocus) {
-                    setState(() {
-                      _focusChange = hasFocus;
-                    });
+                    setState(() => _focusChange = hasFocus);
                   },
                 ),
               ],

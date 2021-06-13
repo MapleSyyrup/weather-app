@@ -5,6 +5,7 @@ import 'package:weather_app/presentation/bloc/weather_state.dart';
 import 'package:weather_app/presentation/initial_weather_screen.dart';
 import 'package:weather_app/presentation/weather_info.dart';
 
+///WeatherScreen builds which state should be displayed
 class WeatherScreen extends StatefulWidget {
   static const routeName = '/WeatherScreen';
 
@@ -22,7 +23,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
         if (state is WeatherLoadingState) {
           return Center(child: CircularProgressIndicator());
         } else if (state is WeatherLoadingSuccessState) {
-          return WeatherInfo(city: state.weatherModel.city, weatherModel: state.weatherModel,);
+          return WeatherInfo(
+            city: state.weatherModel.city,
+            weatherModel: state.weatherModel,
+          );
         } else if (state is WeatherLoadingFailureState) {
           return Center(
             child: Text('${state.errorMessage}'),
@@ -34,5 +38,3 @@ class _WeatherScreenState extends State<WeatherScreen> {
     );
   }
 }
-
-

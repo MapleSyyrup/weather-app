@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+///WeatherObserver is used for obeserving the behavior of bloc
 class WeatherObserver extends BlocObserver {
   @override
   void onEvent(Bloc bloc, Object event) {

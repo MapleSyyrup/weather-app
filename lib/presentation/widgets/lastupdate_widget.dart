@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+///UI design for the last update
 class LastUpdate extends StatelessWidget {
+  ///dateTime holds the update date
   final DateTime dateTime;
 
   const LastUpdate({Key key, this.dateTime})

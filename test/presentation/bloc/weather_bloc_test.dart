@@ -6,8 +6,6 @@ import 'package:weather_app/presentation/bloc/weather_bloc.dart';
 import 'package:weather_app/presentation/bloc/weather_event.dart';
 import 'package:bloc_test/bloc_test.dart';
 import 'package:weather_app/presentation/bloc/weather_state.dart';
-// import 'package:bloc/bloc.dart';
-// import 'package:test/test.dart';
 
 class MockWeatherRepository extends Mock implements WeatherRepository {}
 
@@ -36,7 +34,6 @@ void main() {
         },
         act: (bloc) => bloc.add(CityWeather(city: 'Manila')),
         expect: () => [
-          
           WeatherLoadingState(),
           WeatherLoadingSuccessState(weatherModel: weather),
         ],

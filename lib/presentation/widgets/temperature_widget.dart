@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 
+///temperature to be passed on the screen
 class Temperature extends StatelessWidget {
+  ///format of the displayed temperature
   int _formattedTemperature(double t) => t.round();
+
+  ///weather temperature
   final double temperature;
+
+  ///minimum weather temperature
   final double lowTemp;
+
+  ///maximum weather temperature
   final double highTemp;
 
   const Temperature({
