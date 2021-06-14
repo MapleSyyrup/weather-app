@@ -6,16 +6,16 @@ import 'package:weather_app/presentation/initial_weather_screen.dart';
 import 'package:weather_app/presentation/weather_info.dart';
 
 ///WeatherScreen builds which state should be displayed
-class WeatherScreen extends StatefulWidget {
+class CurrentWeatherScreen extends StatefulWidget {
   static const routeName = '/WeatherScreen';
 
-  const WeatherScreen({Key key}) : super(key: key);
+  const CurrentWeatherScreen({Key key}) : super(key: key);
 
   @override
-  _WeatherScreenState createState() => _WeatherScreenState();
+  _CurrentWeatherScreenState createState() => _CurrentWeatherScreenState();
 }
 
-class _WeatherScreenState extends State<WeatherScreen> {
+class _CurrentWeatherScreenState extends State<CurrentWeatherScreen> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<WeatherBloc, WeatherState>(

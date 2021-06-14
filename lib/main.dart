@@ -8,7 +8,7 @@ import 'package:weather_app/presentation/bloc/weather_bloc.dart';
 import 'package:weather_app/presentation/bloc/weather_state.dart';
 import 'package:weather_app/presentation/initial_weather_screen.dart';
 import 'package:weather_app/presentation/weather_observer.dart';
-import 'package:weather_app/presentation/weather_screen.dart';
+import 'package:weather_app/presentation/current_weather_screen.dart';
 
 void main() {
   Bloc.observer = WeatherObserver();
@@ -43,7 +43,7 @@ class MyApp extends StatelessWidget {
           home: BlocListener<WeatherBloc, WeatherState>(
             listener: (context, state) {
               if (state is WeatherLoadingState) {
-                Navigator.of(context).pushNamed(WeatherScreen.routeName);
+                Navigator.of(context).pushNamed(CurrentWeatherScreen.routeName);
               }
             },
             child: InitialWeather(),
