@@ -8,7 +8,6 @@ class Routers {
       case InitialWeather.routeName:
         return MaterialPageRoute(builder: (BuildContext context) => InitialWeather());
       case CurrentWeatherScreen.routeName:
-      // final cityArg = settings.arguments as String;
         return MaterialPageRoute(builder: (BuildContext context) => CurrentWeatherScreen());
       default:
         return MaterialPageRoute(builder: (BuildContext context) => InitialWeather());
