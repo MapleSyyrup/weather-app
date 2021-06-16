@@ -15,3 +15,14 @@ class CityWeather extends WeatherEvent {
   @override
   List<Object> get props => [city];
 }
+
+///WeatherUpdate is an event for updating the weather information of a city
+class WeatherUpdate extends WeatherEvent {
+  ///city is the existing city that needs to be updated
+  final String city;
+
+  const WeatherUpdate({@required this.city}) : assert(city != null);
+
+  @override
+  List<Object> get props => [city];
+}
