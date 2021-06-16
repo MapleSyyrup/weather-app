@@ -29,8 +29,13 @@ class WeatherInfo extends StatefulWidget {
 }
 
 class _WeatherInfoState extends State<WeatherInfo> {
+  ///TextEditingController for searching another city
   final _enterCityAgain = TextEditingController();
+
+  /// _focusChange is used to determine if the TextField is in focus
   bool _focusChange = false;
+
+  ///produces future event that returns the updated weather information
   Completer<void> _refreshCompleter;
 
   @override
