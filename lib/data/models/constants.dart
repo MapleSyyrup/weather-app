@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
 class Constants {
-  static const clear = 'assets/c.png';
-  static const hail = 'assets/h.png';
-  static const heavyCloud = 'assets/hc.png';
-  static const heavyRain = 'assets/hr.png';
-  static const lightCloud = 'assets/lc.png';
-  static const lightRain = 'assets/lr.png';
-  static const showers = 'assets/s.png';
-  static const sleet = 'assets/sl.png';
-  static const snow = 'assets/sn.png';
-  static const thunderstorm = 'assets/t.png';
+  static const clear = 'assets/clear.png';
+  static const hail = 'assets/hail.png';
+  static const heavyCloud = 'assets/heavyCloud.png';
+  static const heavyRain = 'assets/heavyRain.png';
+  static const lightCloud = 'assets/lightCloud.png';
+  static const lightRain = 'assets/lightRain.png';
+  static const showers = 'assets/showers.png';
+  static const sleet = 'assets/sleet.png';
+  static const snow = 'assets/snow.png';
+  static const thunderstorm = 'assets/thunderstorm.png';
   static const weatherToday = 'assets/weather_today.png';
 }
 

@@ -28,5 +28,11 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
         yield WeatherLoadingFailureState(e.toString());
       }
     }
+    if (event is WeatherUpdate) {
+      try {
+        final WeatherModel weatherModel = await weatherRepository.getWeather(event.city);
+        yield WeatherLoadingSuccessState(weatherModel: weatherModel);
+      } catch (_) {}
+    }
   }
 }
