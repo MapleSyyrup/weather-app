@@ -17,7 +17,7 @@ class WeatherTemperature extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.all(20),
-          child: WeatherConditions(condition: weatherModel.condition),
+          child: WeatherConditions(weatherCondition: weatherModel.condition),
         ),
         Padding(
           padding: EdgeInsets.only(left: 140),

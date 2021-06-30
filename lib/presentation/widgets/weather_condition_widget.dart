@@ -5,15 +5,15 @@ import 'package:weather_app/data/models/weather_model.dart';
 ///types of weather condition
 class WeatherConditions extends StatelessWidget {
   ///holds the weather condition
-  final WeatherCondition condition;
+  final WeatherCondition weatherCondition;
 
   const WeatherConditions({
     Key key,
-    @required this.condition,
+    @required this.weatherCondition,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => _mapConditionToImage(condition);
+  Widget build(BuildContext context) => _mapConditionToImage(weatherCondition);
 
   Image _mapConditionToImage(WeatherCondition condition) {
     Image image;
